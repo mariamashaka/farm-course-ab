@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1.1 - Converting mg to ml</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .lesson-header {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .lesson-title {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .lesson-intro {
+            color: #718096;
+            font-size: 1.1rem;
+        }
+        
+        .content-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .video-placeholder {
+            background: #f7fafc;
+            border: 2px dashed #cbd5e0;
+            border-radius: 10px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .quiz-container {
+            background: #f7fafc;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .quiz-question {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #2d3748;
+            font-weight: 600;
+        }
+        
+        .quiz-options {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .quiz-option {
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .quiz-option:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .quiz-option.selected {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+        
+        .quiz-feedback {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .feedback-correct {
+            background: #f0fff4;
+            border: 1px solid #68d391;
+            color: #2f855a;
+        }
+        
+        .feedback-incorrect {
+            background: #fed7d7;
+            border: 1px solid #fc8181;
+            color: #c53030;
+        }
+        
+        .feedback-info {
+            background: #ebf8ff;
+            border: 1px solid #63b3ed;
+            color: #3182ce;
+        }
+        
+        .drug-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        
+        .back-btn {
+            background: #718096;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .next-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .points-earned {
+            background: #48bb78;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <span data-en="Safe Antibiotics Training" data-sw="Mafunzo ya Antibiotics Salama">Safe Antibiotics Training</span>
+        </div>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="switchLanguage('sw')">SW</button>
+        </div>
+    </div>
+
+    <div class="lesson-container">
+        <div class="lesson-header">
+            <h1 class="lesson-title" data-en="Lesson 1.1: Converting mg to ml - calculating correctly" data-sw="Somo 1.1: Kubadilisha mg kuwa ml - kuhesabu kwa usahihi">
+                Lesson 1.1: Converting mg to ml - calculating correctly
+            </h1>
+            <p class="lesson-intro" data-en="Learn why you need both weight AND concentration to calculate correct doses" data-sw="Jifunze kwa nini unahitaji uzito NA mkusanyiko ili kuhesabu kipimo sahihi">
+                Learn why you need both weight AND concentration to calculate correct doses
+            </p>
+        </div>
+
+        <!-- Introduction Video Section -->
+        <div class="content-section">
+            <h2 data-en="Introduction: Why dosing errors are dangerous" data-sw="Utangulizi: Kwa nini makosa ya kipimo ni hatari">Introduction: Why dosing errors are dangerous</h2>
+            <div class="video-placeholder">
+                <p data-en="📹 Video: Course Overview (2 minutes)" data-sw="📹 Video: Muhtasari wa Kozi (dakika 2)">📹 Video: Course Overview (2 minutes)</p>
+                <p data-en="This video will be available soon" data-sw="Video hii itapatikana hivi karibuni">This video will be available soon</p>
+            </div>
+        </div>
+
+        <!-- Provocative Task -->
+        <div class="content-section">
+            <h2 data-en="Let's test your current knowledge" data-sw="Hebu tujaribu ujuzi wako wa sasa">Let's test your current knowledge</h2>
+            
+            <div class="quiz-container">
+                <div class="quiz-question" data-en="Give metronidazole to a 5-year-old child. How much should you give?" data-sw="Mpe mtoto wa miaka 5 metronidazole. Umpe kiasi gani?">
+                    Give metronidazole to a 5-year-old child. How much should you give?
+                </div>
+                
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this, 'wrong1')" data-en="2.5 ml" data-sw="ml 2.5">2.5 ml</div>
+                    <div class="quiz-option" onclick="selectOption(this, 'wrong2')" data-en="5 ml" data-sw="ml 5">5 ml</div>
+                    <div class="quiz-option" onclick="selectOption(this, 'wrong3')" data-en="10 ml" data-sw="ml 10">10 ml</div>
+                    <div class="quiz-option" onclick="selectOption(this, 'correct')" data-en="I'm not sure - not enough information" data-sw="Sina uhakika - habari hazitoshi">I'm not sure - not enough information</div>
+                </div>
+                
+                <div id="feedback1" class="quiz-feedback feedback-info">
+                    <strong data-en="Excellent thinking!" data-sw="Mawazo mazuri sana!">Excellent thinking!</strong><br>
+                    <span data-en="You're absolutely right! We cannot calculate a dose without knowing:" data-sw="Una haki kabisa! Hatuwezi kuhesabu kipimo bila kujua:">You're absolutely right! We cannot calculate a dose without knowing:</span><br>
+                    <span data-en="1. The child's weight (not just age!)" data-sw="1. Uzito wa mtoto (sio umri tu!)">1. The child's weight (not just age!)</span><br>
+                    <span data-en="2. The concentration of the medication" data-sw="2. Mkusanyiko wa dawa">2. The concentration of the medication</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real Example with Photo -->
+        <div class="content-section">
+            <h2 data-en="Real example: Same drug, different concentrations" data-sw="Mfano halisi: Dawa moja, mkusanyiko tofauti">Real example: Same drug, different concentrations</h2>
+            
+            <p data-en="Look at these two bottles of the same antibiotic that arrived in the same shipment:" data-sw="Angalia machupa haya mawili ya antibiotic moja yaliyofika katika msalio mmoja:">
+                Look at these two bottles of the same antibiotic that arrived in the same shipment:
+            </p>
+            
+            <!-- This is where your photo would go -->
+            <div style="background: #f7fafc; padding: 2rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
+                <p data-en="📸 Photo: DROX 250 (250mg/5ml) vs SANDROX DS 125 (125mg/5ml)" data-sw="📸 Picha: DROX 250 (250mg/5ml) dhidi ya SANDROX DS 125 (125mg/5ml)">📸 Photo: DROX 250 (250mg/5ml) vs SANDROX DS 125 (125mg/5ml)</p>
+                <p style="font-style: italic;" data-en="[Your photo of the two cefadroxil bottles will be inserted here]" data-sw="[Picha yako ya machupa mawili ya cefadroxil itawekwa hapa]">[Your photo of the two cefadroxil bottles will be inserted here]</p>
+            </div>
+            
+            <div class="quiz-container">
+                <div class="quiz-question" data-en="Doctor prescribes: 'Give cefadroxil 5ml three times daily to 20kg child'. Which bottle do you choose?" data-sw="Daktari anaagiza: 'Mpe cefadroxil ml 5 mara tatu kwa siku kwa mtoto wa kilo 20'. Chupa gani unachagua?">
+                    Doctor prescribes: "Give cefadroxil 5ml three times daily to 20kg child". Which bottle do you choose?
+                </div>
+                
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption2(this, 'wrong1')" data-en="DROX 250 (250mg/5ml)" data-sw="DROX 250 (250mg/5ml)">DROX 250 (250mg/5ml)</div>
+                    <div class="quiz-option" onclick="selectOption2(this, 'wrong2')" data-en="SANDROX DS 125 (125mg/5ml)" data-sw="SANDROX DS 125 (125mg/5ml)">SANDROX DS 125 (125mg/5ml)</div>
+                    <div class="quiz-option" onclick="selectOption2(this, 'correct')" data-en="I need to calculate the correct dose first!" data-sw="Ninahitaji kuhesabu kipimo sahihi kwanza!">I need to calculate the correct dose first!</div>
+                </div>
+                
+                <div id="feedback2" class="quiz-feedback feedback-info">
+                    <strong data-en="Perfect! Here's why:" data-sw="Kamili! Huu ndio sababu:">Perfect! Here's why:</strong><br>
+                    <span data-en="• DROX 250: Child gets 250mg × 3 = 750mg per day" data-sw="• DROX 250: Mtoto anapata 250mg × 3 = 750mg kwa siku">• DROX 250: Child gets 250mg × 3 = 750mg per day</span><br>
+                    <span data-en="• SANDROX 125: Child gets 125mg × 3 = 375mg per day" data-sw="• SANDROX 125: Mtoto anapata 125mg × 3 = 375mg kwa siku">• SANDROX 125: Child gets 125mg × 3 = 375mg per day</span><br>
+                    <span data-en="Same volume, DOUBLE the difference in dose!" data-sw="Ujazo sawa, MARA MBILI tofauti katika kipimo!">Same volume, DOUBLE the difference in dose!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Learning Points -->
+        <div class="content-section">
+            <h2 data-en="The Golden Rule" data-sw="Sheria ya Dhahabu">The Golden Rule</h2>
+            <div style="background: #fff5f5; border-left: 4px solid #e53e3e; padding: 1.5rem; border-radius: 5px;">
+                <h3 style="color: #e53e3e;" data-en="You can only calculate with the bottle in your hand!" data-sw="Unaweza kuhesabu tu ukiwa na chupa mkononi!">You can only calculate with the bottle in your hand!</h3>
+                <p data-en="Never prescribe by volume (ml) alone. Always check:" data-sw="Usiagize kwa ujazo (ml) peke yake. Angalia daima:">Never prescribe by volume (ml) alone. Always check:</p>
+                <ul>
+                    <li data-en="Child's weight in kilograms" data-sw="Uzito wa mtoto kwa kilogramu">Child's weight in kilograms</li>
+                    <li data-en="Drug concentration (mg per ml)" data-sw="Mkusanyiko wa dawa (mg kwa ml)">Drug concentration (mg per ml)</li>
+                    <li data-en="Recommended dose (mg per kg)" data-sw="Kipimo kinachoshauri (mg kwa kg)">Recommended dose (mg per kg)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="../index.html" class="back-btn" data-en="← Back to Course" data-sw="← Rudi Kwenye Kozi">← Back to Course</a>
+            <div class="points-earned" data-en="✓ 15 Points Earned!" data-sw="✓ Alama 15 Zimepata!">✓ 15 Points Earned!</div>
+            <button class="next-btn" onclick="completeLesson()" data-en="Complete Lesson →" data-sw="Maliza Somo →">Complete Lesson →</button>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+        function selectOption(element, type) {
+            // Remove selection from all options
+            document.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Select clicked option
+            element.classList.add('selected');
+            
+            // Show feedback
+            const feedback = document.getElementById('feedback1');
+            feedback.style.display = 'block';
+            
+            if (type === 'correct') {
+                feedback.className = 'quiz-feedback feedback-correct';
+            } else {
+                feedback.className = 'quiz-feedback feedback-incorrect';
+                feedback.innerHTML = `<strong>${currentLanguage === 'en' ? 'Think again!' : 'Fikiria tena!'}</strong><br>
+                ${currentLanguage === 'en' ? 'We need more information to calculate the correct dose. What are we missing?' : 'Tunahitaji maelezo zaidi kuhesabu kipimo sahihi. Tunachelewa nini?'}`;
+            }
+        }
+        
+        function selectOption2(element, type) {
+            // Remove selection from all options in second quiz
+            element.parentElement.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Select clicked option
+            element.classList.add('selected');
+            
+            // Show feedback
+            const feedback = document.getElementById('feedback2');
+            feedback.style.display = 'block';
+            
+            if (type === 'correct') {
+                feedback.className = 'quiz-feedback feedback-correct';
+            } else {
+                feedback.className = 'quiz-feedback feedback-incorrect';
+                feedback.innerHTML = `<strong>${currentLanguage === 'en' ? 'Not quite!' : 'Sio kabisa!'}</strong><br>
+                ${currentLanguage === 'en' ? 'The prescription says "5ml" but doesn\'t specify which concentration. This could lead to dangerous dosing errors!' : 'Agizo linasema "5ml" lakini halitaji mkusanyiko gani. Hii inaweza kusababisha makosa hatari ya kipimo!'}`;
+            }
+        }
+        
+        function completeLesson() {
+            alert(currentLanguage === 'en' ? 'Lesson completed! In the full version, this would unlock the next lesson and add points to your progress.' : 'Somo limekamilika! Katika toleo kamili, hii inafungua somo lifuatalo na kuongeza alama kwenye maendeleo yako.');
+            window.location.href = '../index.html';
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const lang = urlParams.get('lang') || 'en';
+            if (lang === 'sw') {
+                switchLanguage('sw');
+            }
+        });
+    </script>
+</body>
+</html>
