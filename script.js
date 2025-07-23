@@ -154,3 +154,12 @@ document.addEventListener('DOMContentLoaded', function() {
     updateLanguage();
     updateLessonCards();
 });
+
+// Lesson management function
+function startLesson(lessonId) {
+    if (lessonId === '1.1') {
+        window.location.href = `course-lessons/lesson-1-1.html?lang=${currentLanguage}`;
+    } else {
+        alert(currentLanguage === 'en' ? 'This lesson is not yet available in the demo.' : 'Somo hili bado halipo katika mfano.');
+    }
+}
