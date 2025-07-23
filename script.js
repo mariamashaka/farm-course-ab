@@ -163,3 +163,11 @@ function startLesson(lessonId) {
         alert(currentLanguage === 'en' ? 'This lesson is not yet available in the demo.' : 'Somo hili bado halipo katika mfano.');
     }
 }
+function startLesson(lessonId) {
+    alert('Function called with: ' + lessonId); // ТЕСТ
+    if (lessonId === '1.1') {
+        window.location.href = `course-lessons/lesson-1-1.html?lang=${currentLanguage}`;
+    } else {
+        alert(currentLanguage === 'en' ? 'This lesson is not yet available in the demo.' : 'Somo hili bado halipo katika mfano.');
+    }
+}
