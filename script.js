@@ -97,7 +97,7 @@ function updateProgress() {
 function startLesson(lessonId) {
     // For demo, we'll only allow lesson 1.1
     if (lessonId === '1.1') {
-        window.location.href = `lessons/lesson-1-1.html?lang=${currentLanguage}`;
+        window.location.href = `course-lessons/lesson-1-1.html?lang=${currentLanguage}`;
     } else {
         alert(currentLanguage === 'en' ? 'This lesson is not yet available in the demo.' : 'Somo hili bado halipo katika mfano.');
     }
